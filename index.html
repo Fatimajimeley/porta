@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fatima</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="container-fluid" style="padding-top: 40px;">
+      <p class="heading">Fatima Nallely Jiménez Leyva</p>
+      <div id="contenedor" class="gallery-image"></div>
+    </div>
+  </body>
+  <script>
+    var proy = [
+        {
+            "img": "images/cgp.png",
+            "img2": "images/cgp2.jpeg",
+            "img3": "images/cgp3.png",
+            "title": "CLUB DE GOLF PACHUCA",
+            "descripcion": "Sistema de manejo para los usuarios del club de Golf Pachuca",
+            "modulos": ["Autenticación y autorización: para acceder a las páginas protegidas","Creacion de usuarios", "Alta e inactivación de usuarios", "Envio de noticias generarle e individuales a los usuarios", "Panel de quejas y sugerencias con respuesta", "Diferentes accesos a pagos, movimientos y balance de usuarios","Carga de documentos,imagenes"],
+            "tecnologia": ["Reactjs","Redux","API's","HTML5","Bootstrap","CSS"]
+        },
+        {
+            "img": "images/memorialcovid.png",
+            "img2": "images/memorial.png",
+            "img3": "images/memorial2.png",
+            "title": "MEMORIAL COVID",
+            "descripcion": "Recopilación de información para el monumento conmemorativo de las victimas por covid 19",
+            "modulos":["Registro publico general","Autenticación y autorización: para acceder a las páginas protegidas","Verificación de usuario", "Panel de validación de la información", "Módulo de exportación: para exportar los datos a Excel.","Carga de documentos e imagenes"],
+            "tecnologia": ["Sails.js", "HTML5","CSS","Bootstrap","MongoDB","API's","JQUERY","NodeJS"]
+        },
+        {
+            "img": "images/apostillado.png",
+            "img2": "images/apostilla1.png",
+            "img3": "images/apostillado.png",
+            "title": "APOSTILLADO Y LEGALIZACIÓN DE DOCUMENTOS",
+            "descripcion": "Sistema para la digitalización de carga de apostilla y documentos legales",
+            "modulos":["Autenticación y autorización: para acceder a las páginas protegidas","Verificación de usuario", "Panel de validación de la información", "Módulo de exportación: para exportar los datos a Excel.","Carga de documentos e imagenes", "Creación, Eliminación, Actualización y visualización de información"],
+            "tecnologia": ["Sails.js", "HTML5","CSS","Bootstrap","MongoDB","API's","JQuery","NodeJS"]
+        },
+        {
+            "img": "images/tramitesseph.png",
+            "img2": "images/sep.jpeg",
+            "img3": "images/sep2.jpeg",
+            "title": "SISTEMA ELECTRÓNICO DE TRÁMITES Y SERVICIOS EDUCATIVOS",
+            "descripcion": "Centraliza e inicia el proceso de manera digital de los principales trámites que realiza el alumnado de escuelas media y superior del estado de Hidalgo",
+            "modulos":["Autenticación y autorización: para acceder a las páginas protegidas","Verificación de usuario", "Panel de validación de la información", "Módulo de exportación: para exportar los datos a Excel.","Carga de documentos e imagenes", "Creación, Eliminación, Actualización y visualización de información","Envio de correos electronicos de manera automatica"],
+            "tecnologia": ["Sails.js", "HTML5","CSS","Bootstrap","MongoDB","API's","JQuery","EJS","NodeJS"]
+        },
+        {
+            "img": "images/registrodocente.png",
+            "img2": "images/registro2.png",
+            "img3": "images/registro3.png",
+            "title": "REGISTRO DOCENTE SEPH",
+            "descripcion": "Registro, pago y credencialización de docentes de instituciones privadas.",
+            "modulos":["Autenticación y autorización: para acceder a las páginas protegidas","Verificación de usuario", "Panel de validación de la información", "Módulo de exportación: para exportar los datos a Excel.","Carga de documentos e imagenes", "Creación, Eliminación, Actualización y visualización de información","Creación y descarga de pdf","Envio de correos electronicos de manera automatica"],
+            "tecnologia": ["EJS","NodeJS","HTML5","CSS","Bootstrap","MongoDB","API's","JQuery"]
+        },
+        {
+            "img": "images/certificados.png",
+            "img2": "images/certificado2.png",
+            "img3": "images/certificado3.png",
+            "title": "CERTIFICADOS DE EDUCACIÓN BÁSICA SEPH",
+            "descripcion": "Digitalización del tramite de certificados de educación básica, solicitud, pago y respuesta.",
+            "modulos":["Autenticación y autorización: para acceder a las páginas protegidas","Verificación de usuario", "Panel de validación de la información", "Módulo de exportación: para exportar los datos a Excel.","Carga de documentos e imagenes","Envio de correos electronicos de manera automatica"],
+            "tecnologia": ["EJS","NodeJS","HTML5","CSS","Bootstrap","MongoDB","API's","JQuery"]
+        },
+        {
+            "img": "images/ingles.png",
+            "img2": "images/ingles2.png",
+            "img3": "images/ingles3.png",
+            "title": "REGISTRO CURSOS DE INGLÉS SEP",
+            "descripcion": "Registro para formar parte de los cursos de inglés",
+            "modulos":["Modulo de registro","Autenticación y autorización: para acceder a las páginas protegidas","Verificación de usuario", "Panel de validación de la información","Actividad para pausar el registro"],
+            "tecnologia": ["EJS","NodeJS","HTML5","CSS","Bootstrap","MongoDB","API's","JQuery"]
+        },
+        {
+            "img": "images/rusieh.png",
+            "img2": "images/rusieh2.png",
+            "img3": "images/rusieh3.png",
+            "title": "REGISTRO ÚNICO DE SISTEMAS DEL ESTADO DE HIDALGO",
+            "descripcion": "Recopilar todos los sistemas del Estado de Hidalgo, para analizar y centralizar la información",
+            "modulos":["Autenticación y autorización: para acceder a las páginas protegidas","Verificación de usuario", "Panel de validación de la información"],
+            "tecnologia": ["EJS","NodeJS","HTML5","CSS","Bootstrap","MongoDB","API's","JQuery"]
+        },
+        {
+            "img": "images/documentacionadministrativa.png",
+            "img2": "images/admin2.png",
+            "img3": "images/admin3.png",
+            "title": "PLATAFORMA DE DOCUMENTACIÓN ADMNISTRATIVA",
+            "descripcion": "Organizar, analizar y regular la documentación administrativa ",
+            "modulos":["Autenticación y autorización: para acceder a las páginas protegidas","Verificación de usuario", "Panel de validación de la información"],
+            "tecnologia": ["EJS","NodeJS","HTML5","CSS","Bootstrap","MongoDB","API's","JQuery"]
+        },
+        {
+            "img": "images/hidalgomagico.png",
+            "img2": "images/magico2.png",
+            "img3": "images/magico3.png",
+            "title": "HIDALGO MAGICO",
+            "descripcion": "Registro de empresas del estado de Hidalgo para alimentar la app Hidalgo Mágico",
+            "modulos":["Autenticación y autorización: para acceder a las páginas protegidas","Verificación de usuario", "Panel de validación de la información"],
+            "tecnologia": ["EJS","NodeJS","HTML5","CSS","Bootstrap","MongoDB","API's","JQuery"]
+        },
+        {
+            "img": "images/fea.png",
+            "img2": "images/fea2.png",
+            "img3": "images/fea3.png",
+            "title": "SISTEMA DE CARGA DE EXPEDIENTES",
+            "descripcion": "SISTEMA INTEGRAL DE CARGA DE EXPEDIENTES DIGITALES FEA",
+            "modulos":["Autenticación y autorización: para acceder a las páginas protegidas","Verificación de usuario", "Panel de validación de la información"],
+            "tecnologia": ["EJS","NodeJS","HTML5","CSS","Bootstrap","MongoDB","API's","JQuery"]
+        },
+        {
+            "img": "images/sistemasdigimer.png",
+            "img2": "images/siste2.png",
+            "img3": "images/siste3.png",
+            "title": "PLATAFORMA PARA REGISTRO DE SISTEMAS DESARROLLADOS EN DIGIGMER",
+            "descripcion": "Plataforma para registro de Sistemas desarrollados en DIGIGMER ",
+            "modulos":["Autenticación y autorización: para acceder a las páginas protegidas","Verificación de usuario", "Panel de validación de la información"],
+            "tecnologia": ["EJS","NodeJS","HTML5","CSS","Bootstrap","MongoDB","API's","JQuery"]
+        },
+        {
+            "img": "images/sirith.png",
+            "img2": "images/sirit2.png",
+            "img3": "images/sirit3.png",
+            "title": "SISTEMA DE INVENTARIO DE RECURSOS INFORMÁTICOS Y TELECOMUNICACIONES",
+            "descripcion": "Proveer y analizar datos sobre los recursos informáticos y de telecomunicaciones con los que cuenta el Gobierno del Estado ",
+            "modulos":["Autenticación y autorización: para acceder a las páginas protegidas","Verificación de usuario", "Panel de validación de la información"],
+            "tecnologia": ["EJS","NodeJS","HTML5","CSS","Bootstrap","MongoDB","API's","JQuery"]
+        },
+        {
+            "img": "images/donaciones.png",
+            "img2": "images/donacion2.png",
+            "img3": "images/donacion3.png",
+            "title": "DONACIONES COVID",
+            "descripcion": "Sistema de registro para donaciones recibidas por los ciudadanos para apoyo covid",
+            "modulos":["Autenticación y autorización: para acceder a las páginas protegidas","Verificación de usuario", "Panel de validación de la información"],
+            "tecnologia": ["EJS","NodeJS","HTML5","CSS","Bootstrap","MongoDB","API's","JQuery"]
+        },
+        {
+            "img": "images/covid4.png",
+            "img2": "images/donacion42.png",
+            "img3": "images/donacion43.png",
+            "title": "CALLCENTER COVID 4to PISO",
+            "descripcion": "Sistema para atención a la ciudadanía brindando información y apoyos por pandemia del Gobierno del Estado de Hidalgo.",
+            "modulos":["Autenticación y autorización: para acceder a las páginas protegidas","Verificación de usuario", "Panel de validación de la información","Cuenta con indicadores graficos y mapas"],
+            "tecnologia": ["EJS","NodeJS","HTML5","CSS","Bootstrap","MongoDB","API's","JQuery"]
+        },
+        {
+            "img": "images/audiencia.png",
+            "img2":"images/audiencia2.png",
+            "img3":"images/audiencia3.png",
+            "title": "AUDIENCIAS PÚBLICAS DIGITALES",
+            "descripcion": "Atención a los ciudadano de los municipios para realizar su registro, entrega de ticket y atención por parte de la secretaría.",
+            "modulos":["Autenticación y autorización: para acceder a las páginas protegidas","Verificación de usuario", "Panel de validación de la información","Indicadores","Filtros de información"],
+            "tecnologia": ["Sails.js","EJS","NodeJS","HTML5","CSS","Bootstrap","MongoDB","API's","JQuery"]
+        }
+    ]
+    let html = '';
+    const contenedor = document.getElementById('contenedor');
+    if (proy && proy.length > 0) {
+      proy.forEach(function(itemObj, i) {
+        html += `
+                  <div class="img-box">
+                    <div class="imagen" style="background-image: url('` + itemObj.img + `');"></div>
+                      <div class="transparent-box">
+                        <div class="caption">
+                          <center>
+                            <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#exampleModal_` + i + `">
+                            Información
+                            </button>
+                          </center>
+                          <p>` + itemObj.title + `</p>
+                          <p class="opacity-low">` + itemObj.descripcion + `</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal fade" id="exampleModal_` +i+ `" tabindex="-1" aria-labelledby="exampleModalLabel_` +i+ `" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel_` +i+ `">` + itemObj.title + `</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="carouselExampleIndicators_` +i+ `" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                      <button type="button" data-bs-target="#carouselExampleIndicators_` +i+ `" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                      <button type="button" data-bs-target="#carouselExampleIndicators_` +i+ `" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                      <button type="button" data-bs-target="#carouselExampleIndicators_` +i+ `" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    </div>
+                                    <div class="carousel-inner">
+                                      <div class="carousel-item active">
+                                        <img src="` + itemObj.img+ `" class="d-block w-100" >
+                                      </div>
+                                      <div class="carousel-item">
+                                        <img src="` + itemObj.img2+ `" class="d-block w-100" >
+                                      </div>
+                                      <div class="carousel-item">
+                                        <img src="` + itemObj.img3+ `" class="d-block w-100" >
+                                      </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators_` +i+ `" data-bs-slide="prev">
+                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                      <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators_` +i+ `" data-bs-slide="next">
+                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                      <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+
+                                <div class="bodymodal">
+                                    `+ itemObj.descripcion +`, modulos:
+                                    <ul>
+                                      `+ itemObj.modulos.map(function(modulo) {
+                                          return `<li>${modulo}</li>`;
+                                        }).join('') +`
+                                    </ul>
+                                    <div>
+                                      `+ itemObj.tecnologia.map(function(tecnologia) {
+                                          return `<button type="button" class="btn btn-outline-success tecnologiatool" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+                                                    ${tecnologia}
+                                                  </button>`;
+                                        }).join('') +`
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                `
+              })
+    }
+    contenedor.innerHTML = html;
+  </script>
+</html>
